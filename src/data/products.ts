@@ -169,7 +169,7 @@ const accessoryProducts: Product[] = [
     category: 'accessory',
     title: 'Блокнот для трафаретів Notepad',
     price: 190,
-    image: '/images/accessories/notepad-placeholder.svg',
+    image: '/images/accessories/notepad.jpg',
     descriptionShort: 'Компактний блокнот для зберігання та впорядкування використаних трафаретів.',
   },
 ];
