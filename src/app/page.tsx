@@ -1,65 +1,61 @@
 import Image from "next/image";
+import Link from "next/link";
+import PopularCarousel from "@/components/PopularCarousel";
+import CategoryTile from "@/components/CategoryTile";
+import { getPopularProducts } from "@/data/products";
 
 export default function Home() {
+  const popular = getPopularProducts();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div>
+      <section className="mx-auto max-w-6xl px-4 pt-14 pb-10 flex flex-col items-center text-center gap-6">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/images/misc/logo.png"
+          alt="StreamAIR Aerography"
+          width={360}
+          height={98}
+          className="w-64 sm:w-80 h-auto"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <h1 className="text-3xl sm:text-4xl font-extrabold max-w-2xl">
+          Фарби та трафарети для аерографії
+        </h1>
+        <p className="max-w-xl opacity-70">
+          Фірмова продукція streamair_: фарби, трафарети, рідина для промивки аерографа, сітки для дизайну,
+          топ для перекриття аерографії.
+        </p>
+        <div className="flex gap-3 flex-wrap justify-center">
+          <Link
+            href="/farby"
+            className="rounded-full bg-[var(--foreground)] text-white px-6 py-3 font-medium hover:opacity-90 transition-opacity"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Обрати фарби
+          </Link>
+          <Link
+            href="/trafarety"
+            className="rounded-full card-surface px-6 py-3 font-medium hover:-translate-y-0.5 transition-transform"
           >
-            Documentation
-          </a>
+            Каталог трафаретів
+          </Link>
         </div>
-      </main>
+      </section>
+
+      <PopularCarousel products={popular} />
+
+      <section className="mx-auto max-w-6xl px-4 py-10">
+        <h2 className="text-2xl font-bold mb-5">Категорії</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <CategoryTile href="/farby" emoji="🎨" title="Фарби" subtitle="Basic, Neon, Nude, Pearl" />
+          <CategoryTile href="/trafarety" emoji="🦋" title="Трафарети" subtitle="Понад 45 дизайнів" />
+          <CategoryTile
+            href="/materialy"
+            emoji="🧰"
+            title="Додаткові матеріали"
+            subtitle="Сітка, блокнот, клінер, топ"
+          />
+        </div>
+      </section>
     </div>
   );
 }

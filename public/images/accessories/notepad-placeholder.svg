@@ -1,0 +1,27 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCEEF7"/>
+      <stop offset="50%" stop-color="#E6E0F5"/>
+      <stop offset="100%" stop-color="#B9E6F2"/>
+    </linearGradient>
+    <linearGradient id="cover" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8E6FCE"/>
+      <stop offset="100%" stop-color="#5AC8E8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <g transform="translate(115,80)">
+    <rect x="0" y="0" width="170" height="230" rx="14" fill="url(#cover)"/>
+    <rect x="14" y="16" width="142" height="198" rx="6" fill="#FBFAFD"/>
+    <rect x="-10" y="18" width="18" height="26" rx="4" fill="#5AC8E8"/>
+    <rect x="-10" y="58" width="18" height="26" rx="4" fill="#8E6FCE"/>
+    <rect x="-10" y="98" width="18" height="26" rx="4" fill="#E84393"/>
+    <line x1="30" y1="55" x2="140" y2="55" stroke="#D8D2E8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="30" y1="85" x2="140" y2="85" stroke="#D8D2E8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="30" y1="115" x2="110" y2="115" stroke="#D8D2E8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="30" y1="145" x2="140" y2="145" stroke="#D8D2E8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="30" y1="175" x2="100" y2="175" stroke="#D8D2E8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="200" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#2B1B2E" opacity="0.55">фото незабаром</text>
+</svg>

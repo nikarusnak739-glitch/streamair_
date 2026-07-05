@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StreamAIR — сайт-магазин фарб і трафаретів
 
-## Getting Started
+Інтернет-магазин на Next.js: каталог фарб (Basic/Neon/Nude/Pearl), трафарети, приладдя, догляд, кошик,
+оформлення замовлення та Telegram-сповіщення про нові замовлення й додавання в кошик.
 
-First, run the development server:
+## Запуск локально
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Відкрити [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Telegram-сповіщення — покрокова інструкція
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Щоб на телефон (мами) приходили сповіщення про замовлення, потрібно створити Telegram-бота і вписати два значення в налаштування хостингу.
 
-## Learn More
+**Крок 1. Створити бота**
+1. У Telegram знайти `@BotFather`, написати йому `/newbot`.
+2. Придумати ім'я та username бота (має закінчуватись на `bot`).
+3. BotFather надішле токен виду `7123456789:AAHxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` — зберегти його, нікому не показувати.
 
-To learn more about Next.js, take a look at the following resources:
+**Крок 2. Отримати chat_id**
+1. Написати своєму новому боту будь-яке повідомлення (наприклад "привіт") — інакше він не зможе писати у відповідь.
+2. Написати боту `@userinfobot` — він надішле у відповідь ваш `chat_id` (набір цифр).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Крок 3. Вписати значення**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Локально: скопіювати `.env.local.example` у `.env.local` і вписати значення:
 
-## Deploy on Vercel
+```
+TELEGRAM_BOT_TOKEN=7123456789:AAHxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TELEGRAM_CHAT_ID=123456789
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+На Vercel (для робочого сайту): Project → Settings → Environment Variables → додати обидва значення з тими самими іменами → зробити redeploy проєкту.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Поки токен і chat_id не вписані, сайт продовжує працювати нормально — сповіщення просто не надсилаються (у консолі сервера буде попередження).
+
+Токен і chat_id вже вписані в `.env.local` для локальної розробки та реально протестовані — повідомлення надходять у Telegram при додаванні в кошик і при оформленні замовлення. Для робочого сайту на Vercel ці ж значення потрібно додати окремо в налаштуваннях проєкту (крок нижче) — `.env.local` на сервер не потрапляє.
+
+**Перевірка токена вручну** (необов'язково): відкрити в браузері
+`https://api.telegram.org/bot<ВАШ_ТОКЕН>/sendMessage?chat_id=<ВАШ_CHAT_ID>&text=Тест` — якщо бот написав "Тест", все підключено правильно.
+
+## Деплой на Vercel
+
+1. Залити проєкт у GitHub (або підключити напряму з локальної машини через `vercel` CLI).
+2. На [vercel.com](https://vercel.com) → Add New Project → обрати цей репозиторій.
+3. Framework визначиться автоматично (Next.js). Додати змінні середовища `TELEGRAM_BOT_TOKEN` і `TELEGRAM_CHAT_ID` (див. вище).
+4. Deploy.
+
+## Як редагувати каталог товарів
+
+Усі товари, ціни, кольори й описи лежать в одному файлі — `src/data/products.ts`.
+
+- **Ціна** — поле `price` у відповідному масиві (`BASIC_COLORS`, `NEON_COLORS` тощо для фарб, або напряму в об'єкті товару для приладдя/догляду).
+- **"Популярне" на головній** — товар потрапляє у стрічку, якщо в нього `popular: true`. Щоб додати/прибрати товар зі стрічки — знайти його в `products.ts` і поставити/видалити цей рядок.
+- **Фото товару** — поле `image`, файли лежать у `public/images/`. Щоб замінити фото — покласти новий файл з такою ж назвою в цю папку (або змінити шлях у `image`).
+- **Notepad** — поки що без реального фото (тимчасова іконка-заглушка `public/images/accessories/notepad-placeholder.svg`). Коли з'явиться фото — покласти його в `public/images/accessories/` і замінити шлях у `products.ts`.
+
+## Структура проєкту
+
+```
+src/app/          — сторінки сайту (Головна, /farby, /trafarety, /materialy, /cart, /product/[id])
+src/app/api/      — серверні функції: notify-cart (додано в кошик), order (нове замовлення)
+src/components/   — картки товарів, хедер, футер, стрічка "Популярне"
+src/context/      — кошик (зберігається в localStorage браузера)
+src/data/         — каталог товарів і типи
+src/lib/          — Telegram-хелпер, форматування цін
+public/images/    — оброблені фото товарів і логотип
+source-photos/    — оригінальні фото з телефону (не потрапляють у git, лишаються тільки локально)
+```
+
+## Instagram
+
+Посилання на `@streamair_` виведено в шапці, футері та на екрані підтвердження замовлення.
