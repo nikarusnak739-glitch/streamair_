@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope, Unbounded } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
@@ -8,6 +8,12 @@ import Footer from "@/components/Footer";
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin", "cyrillic"],
+});
+
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
+  subsets: ["latin", "cyrillic"],
+  weight: ["600", "800"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk" className={`${manrope.variable} h-full antialiased`}>
+    <html lang="uk" className={`${manrope.variable} ${unbounded.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <div className="gradient-bg" aria-hidden="true" />
         <CartProvider>

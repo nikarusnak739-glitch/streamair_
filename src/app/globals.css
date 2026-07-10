@@ -93,3 +93,58 @@ body {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(6px);
 }
+
+/* Банер "Шалені вихідні" */
+.weekend-banner-surface {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  isolation: isolate;
+  box-shadow: 0 12px 30px -12px rgba(168, 44, 165, 0.45);
+}
+
+.weekend-banner-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle 20px at 24px 26px, #ec4fc9 99%, transparent 100%),
+    radial-gradient(circle 15px at 50px 40px, #ec4fc9 99%, transparent 100%),
+    radial-gradient(circle 11px at 34px 58px, #ec4fc9 99%, transparent 100%),
+    radial-gradient(circle 9px at 66px 20px, #ec4fc9 99%, transparent 100%),
+    linear-gradient(135deg, #f6d3f7 0%, #e6ade9 45%, #c98bdc 100%);
+  background-size:
+    96px 96px,
+    96px 96px,
+    96px 96px,
+    96px 96px,
+    100% 100%;
+  background-repeat: repeat, repeat, repeat, repeat, no-repeat;
+  opacity: 0.9;
+}
+
+.weekend-banner-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-unbounded);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(122, 21, 116, 0.4);
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  line-height: 1.1;
+  transform: rotate(-2deg);
+}
+
+.weekend-banner-subtitle {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-unbounded);
+  font-weight: 600;
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  background: rgba(43, 27, 46, 0.35);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  backdrop-filter: blur(2px);
+}

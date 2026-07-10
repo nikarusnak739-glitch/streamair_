@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PopularCarousel from "@/components/PopularCarousel";
 import CategoryTile from "@/components/CategoryTile";
+import WeekendBanner from "@/components/WeekendBanner";
 import { getPopularProducts } from "@/data/products";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
 
   return (
     <div>
+      <WeekendBanner />
       <section className="mx-auto max-w-6xl px-4 pt-14 pb-10 flex flex-col items-center text-center gap-6">
         <Image
           src="/images/misc/logo.png"
