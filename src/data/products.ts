@@ -148,7 +148,7 @@ const stencilProducts: Product[] = STENCILS.map(([number, desc]) => ({
   category: 'stencil',
   number,
   title: `Трафарет №${number}`,
-  price: 75,
+  price: 60,
   image: `/images/stencils/stencil-${number}.jpg`,
   popular: POPULAR_STENCILS.has(number),
   descriptionShort: desc,
