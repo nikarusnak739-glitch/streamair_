@@ -17,7 +17,7 @@ const unbounded = Unbounded({
   weight: ["600", "800"],
 });
 
-const SITE_URL = "https://streamair-shop.vercel.app";
+const SITE_URL = "https://streamair.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

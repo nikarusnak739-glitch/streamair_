@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 
-const SITE_URL = "https://streamair-shop.vercel.app";
+const SITE_URL = "https://streamair.vercel.app";
 const PAINT_LINES = ["basic", "neon", "nude", "pearl"];
 
 export default function sitemap(): MetadataRoute.Sitemap {

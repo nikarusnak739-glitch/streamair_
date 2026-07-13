@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://streamair-shop.vercel.app";
+const SITE_URL = "https://streamair.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
