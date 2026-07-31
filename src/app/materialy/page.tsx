@@ -4,6 +4,8 @@ import ProductCard from "@/components/ProductCard";
 
 export const metadata: Metadata = {
   title: "Додаткові матеріали — StreamAIR",
+  description:
+    "Приладдя StreamAIR для аерографії: сітка для дизайну, блокнот для трафаретів, засіб для очищення аерографа Airbrush cleaner, топ Sticky.",
 };
 
 export default function MaterialyPage() {

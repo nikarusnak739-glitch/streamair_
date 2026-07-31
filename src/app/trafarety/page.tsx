@@ -4,6 +4,8 @@ import ProductCard from "@/components/ProductCard";
 
 export const metadata: Metadata = {
   title: "Трафарети для аерографії — StreamAIR",
+  description:
+    "Трафарети StreamAIR для аерографії нігтів: квіти, геометрія, написи та інші дизайни. Багаторазові, чіткий контур, доставка по Україні.",
 };
 
 export default function TrafaretyPage() {

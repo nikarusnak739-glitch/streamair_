@@ -6,6 +6,8 @@ import { getPaintsByLine } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Фарби для аерографії — StreamAIR",
+  description:
+    "Фарба для аерографії та нігтів StreamAIR: лінійки Basic, Neon, Nude, Pearl. Щільна пігментація, доставка по Україні.",
 };
 
 const LINES: PaintLine[] = ["basic", "neon", "nude", "pearl"];

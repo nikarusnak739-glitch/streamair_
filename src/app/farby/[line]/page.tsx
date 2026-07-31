@@ -18,7 +18,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { line } = await params;
   const label = VALID_LINES.includes(line as PaintLine) ? PAINT_LINE_LABELS[line as PaintLine] : "Фарби";
-  return { title: `${label} — StreamAIR` };
+  return {
+    title: `${label} — StreamAIR`,
+    description: `Фарба для аерографії StreamAIR ${label} — купити з доставкою по Україні. Щільна пігментація, для аерографії на нігтях та інших поверхнях.`,
+  };
 }
 
 export default async function FarbyLinePage({ params }: { params: Promise<{ line: string }> }) {

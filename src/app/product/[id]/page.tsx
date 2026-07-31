@@ -18,7 +18,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const product = getProductById(id);
-  return { title: product ? `${getProductName(product)} — StreamAIR` : "Товар не знайдено" };
+  return {
+    title: product ? `${getProductName(product)} — StreamAIR` : "Товар не знайдено",
+    description: product?.descriptionShort,
+  };
 }
 
 function getBackLink(product: NonNullable<ReturnType<typeof getProductById>>) {
