@@ -6,6 +6,7 @@
   --accent-pink: #E84393;
   --accent-purple: #8E6FCE;
   --accent-blue: #5AC8E8;
+  --graphite: #1C1A20;
 }
 
 @theme inline {
@@ -14,7 +15,12 @@
   --color-accent-pink: var(--accent-pink);
   --color-accent-purple: var(--accent-purple);
   --color-accent-blue: var(--accent-blue);
+  --color-graphite: var(--graphite);
   --font-sans: var(--font-manrope);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
 }
 
 body {
@@ -126,6 +132,13 @@ body {
   .hero-photo-in {
     animation: none;
   }
+}
+
+/* Темні секції: сторінки категорій (Фарби / Трафарети / Матеріали) і плитки категорій — того ж кольору, що й hero */
+.section-dark,
+.tile-dark {
+  background: radial-gradient(circle at 75% 25%, #2b1b2e 0%, #17111c 55%, #0d0a11 100%);
+  color: #fff;
 }
 
 /* Банер "Шалені вихідні" */

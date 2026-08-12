@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Unbounded } from "next/font/google";
+import { Manrope, Unbounded, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
@@ -15,6 +15,12 @@ const unbounded = Unbounded({
   variable: "--font-unbounded",
   subsets: ["latin", "cyrillic"],
   weight: ["600", "800"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-heading",
+  subsets: ["latin", "cyrillic"],
+  weight: ["600", "700", "800"],
 });
 
 const SITE_URL = "https://streamair.shop";
@@ -72,7 +78,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="uk" className={`${manrope.variable} ${unbounded.variable} h-full antialiased`}>
+    <html
+      lang="uk"
+      className={`${manrope.variable} ${unbounded.variable} ${playfair.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

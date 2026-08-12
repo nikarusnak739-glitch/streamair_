@@ -14,7 +14,7 @@ export default function Home() {
       <section className="hero-dark relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-10 md:gap-6">
           <div className="hero-text-in flex flex-col items-start gap-6 text-left order-2 md:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold max-w-xl text-white">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold max-w-xl text-white">
               Фарби та трафарети для аерографії
             </h1>
             <p className="max-w-xl text-white/70">
@@ -37,12 +37,12 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-photo-in order-1 md:order-2 justify-self-center md:justify-self-end">
-            <div className="hero-photo-glow relative w-56 sm:w-72 md:w-80 aspect-[615/900] rounded-2xl overflow-hidden">
+            <div className="hero-photo-glow relative w-72 sm:w-96 md:w-[420px] aspect-[615/900] rounded-2xl overflow-hidden">
               <Image
                 src="/images/misc/hero-premium.jpg"
                 alt="StreamAIR — фарба для аерографії"
                 fill
-                sizes="(max-width: 768px) 60vw, 320px"
+                sizes="(max-width: 768px) 75vw, 420px"
                 className="object-cover"
                 priority
               />
@@ -54,7 +54,7 @@ export default function Home() {
       <PopularCarousel products={popular} />
 
       <section className="mx-auto max-w-6xl px-4 py-10">
-        <h2 className="text-2xl font-bold mb-5">Категорії</h2>
+        <h2 className="font-heading text-2xl font-bold mb-5">Категорії</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <CategoryTile href="/farby" emoji="🎨" title="Фарби" subtitle="Basic, Neon, Nude, Pearl" />
           <CategoryTile href="/trafarety" emoji="🦋" title="Трафарети" subtitle="Понад 45 дизайнів" />

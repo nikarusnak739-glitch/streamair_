@@ -35,7 +35,7 @@ export default function ProductCard({ product, className = "" }: { product: Prod
               e.preventDefault();
               addItem(product);
             }}
-            className="text-xs font-medium rounded-full bg-[var(--foreground)] text-white px-3 py-2 hover:opacity-90 transition-opacity"
+            className="text-xs font-medium rounded-full bg-[var(--graphite)] text-white px-3 py-2 hover:opacity-90 transition-opacity"
           >
             В кошик
           </button>

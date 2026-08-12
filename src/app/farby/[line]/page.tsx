@@ -34,15 +34,17 @@ export default async function FarbyLinePage({ params }: { params: Promise<{ line
   const items = getPaintsByLine(paintLine);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <Link href="/farby" className="text-sm opacity-60 hover:opacity-100">
-        ← Всі фарби
-      </Link>
-      <h1 className="text-3xl font-extrabold mt-2 mb-8">{PAINT_LINE_LABELS[paintLine]}</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {items.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <div className="section-dark">
+      <div className="mx-auto max-w-6xl px-4 py-10">
+        <Link href="/farby" className="text-sm text-white/60 hover:text-white transition-colors">
+          ← Всі фарби
+        </Link>
+        <h1 className="font-heading text-3xl font-bold mt-2 mb-8">{PAINT_LINE_LABELS[paintLine]}</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {items.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

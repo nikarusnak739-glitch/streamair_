@@ -17,7 +17,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 card-surface shadow-sm">
+    <header className="hero-dark sticky top-0 z-40 shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
@@ -30,7 +30,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-accent-pink transition-colors">
               {link.label}
@@ -44,7 +44,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Instagram ${INSTAGRAM_HANDLE}`}
-            className="hidden sm:flex items-center gap-2 text-sm font-medium hover:text-accent-pink transition-colors group"
+            className="hidden sm:flex items-center gap-2 text-sm font-medium text-white/80 hover:text-accent-pink transition-colors group"
           >
             <svg
               viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ export default function Header() {
           </a>
           <Link
             href="/cart"
-            className="relative inline-flex items-center justify-center rounded-full bg-[var(--foreground)] text-white w-10 h-10 hover:opacity-90 transition-opacity"
+            className="relative inline-flex items-center justify-center rounded-full bg-white/10 border border-white/20 text-white w-10 h-10 hover:bg-white/20 transition-colors"
             aria-label="Кошик"
           >
             🛒
@@ -72,7 +72,7 @@ export default function Header() {
             )}
           </Link>
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center"
+            className="md:hidden w-10 h-10 flex items-center justify-center text-white"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Меню"
           >
@@ -82,7 +82,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <nav className="md:hidden border-t border-black/5 px-4 py-3 flex flex-col gap-3 text-sm font-medium">
+        <nav className="md:hidden border-t border-white/10 px-4 py-3 flex flex-col gap-3 text-sm font-medium text-white/80">
           {NAV_LINKS.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
               {link.label}

@@ -10,7 +10,7 @@ export default function PopularCarousel({ products }: { products: Product[] }) {
   return (
     <section className="bg-[#F1EFF2] py-10">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-2xl font-bold mb-5">Популярне</h2>
+        <h2 className="font-heading text-2xl font-bold mb-5">Популярне</h2>
         <div className="marquee-viewport">
           <div className="marquee-track">
             {loopItems.map((product, i) => (
