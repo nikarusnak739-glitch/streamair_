@@ -39,12 +39,12 @@ export default function CartPage() {
 
   if (status === "done") {
     return (
-      <div className="mx-auto max-w-2xl px-4 py-20 text-center">
+      <div className="mx-auto max-w-2xl px-4 py-20 text-center text-white">
         <h1 className="text-3xl font-extrabold mb-4">Дякуємо за замовлення! 🎉</h1>
-        <p className="opacity-70 mb-6">
+        <p className="text-white/70 mb-6">
           Ми отримали ваше замовлення і зв&apos;яжемось з вами найближчим часом для підтвердження.
         </p>
-        <p className="opacity-70 mb-8">
+        <p className="text-white/70 mb-8">
           Є питання просто зараз? Пишіть в Instagram{" "}
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-accent-pink">
             {INSTAGRAM_HANDLE}
@@ -58,12 +58,12 @@ export default function CartPage() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10">
+    <div className="mx-auto max-w-4xl px-4 py-10 text-white">
       <h1 className="text-3xl font-extrabold mb-8">Кошик</h1>
 
       {items.length === 0 ? (
         <div className="text-center py-16">
-          <p className="opacity-70 mb-6">Кошик порожній</p>
+          <p className="text-white/70 mb-6">Кошик порожній</p>
           <Link href="/farby" className="rounded-full bg-[var(--foreground)] text-white px-6 py-3 font-medium inline-block">
             До каталогу
           </Link>
@@ -96,7 +96,7 @@ export default function CartPage() {
               </div>
             ))}
             <div className="flex justify-between items-center pt-4 px-1">
-              <span className="opacity-70">Разом</span>
+              <span className="text-white/70">Разом</span>
               <span className="text-xl font-extrabold">{formatPrice(totalPrice)}</span>
             </div>
           </div>

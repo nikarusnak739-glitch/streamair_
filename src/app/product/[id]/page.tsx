@@ -45,8 +45,8 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   const subtitle = getProductSubtitle(product);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10">
-      <Link href={back.href} className="text-sm opacity-60 hover:opacity-100">
+    <div className="mx-auto max-w-4xl px-4 py-10 text-white">
+      <Link href={back.href} className="text-sm text-white/60 hover:text-white transition-colors">
         {back.label}
       </Link>
 
@@ -64,11 +64,11 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <div>
           <h1 className="text-3xl font-extrabold">
             {getProductName(product)}
-            {subtitle && <span className="opacity-60 font-semibold"> · {subtitle}</span>}
+            {subtitle && <span className="text-white/60 font-semibold"> · {subtitle}</span>}
             {" · "}
             {formatPrice(product.price)}
           </h1>
-          <p className="text-sm opacity-60 mt-3 max-w-md">{product.descriptionShort}</p>
+          <p className="text-sm text-white/60 mt-3 max-w-md">{product.descriptionShort}</p>
 
           <div className="mt-6">
             <ProductDetailActions product={product} />

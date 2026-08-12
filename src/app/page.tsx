@@ -63,7 +63,7 @@ export default function Home() {
       <PopularCarousel products={popular} />
 
       <section className="mx-auto max-w-6xl px-4 py-10">
-        <h2 className="font-heading text-2xl font-bold mb-5">Категорії</h2>
+        <h2 className="font-heading text-2xl font-bold mb-5 text-white">Категорії</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <CategoryTile href="/farby" emoji="🎨" title="Фарби" subtitle="Basic, Neon, Nude, Pearl" />
           <CategoryTile href="/trafarety" emoji="🦋" title="Трафарети" subtitle="Понад 45 дизайнів" />

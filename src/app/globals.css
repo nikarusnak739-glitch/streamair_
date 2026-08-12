@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F7F3F8;
+  --background: #17111c;
   --foreground: #2B1B2E;
   --accent-pink: #E84393;
   --accent-purple: #8E6FCE;
@@ -25,7 +25,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: #ffffff;
   font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
 }
 
@@ -34,7 +34,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(120deg, #DCEEF7, #B9E6F2, #E6E0F5, #CFE9F4, #DCEEF7);
+  background: linear-gradient(120deg, #2b1b2e, #17111c, #241a2b, #0d0a11, #2b1b2e);
   background-size: 300% 300%;
   animation: driftGradient 16s ease infinite;
 }
@@ -98,6 +98,7 @@ body {
 .card-surface {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(6px);
+  color: var(--foreground);
 }
 
 /* Преміальний темний hero */
