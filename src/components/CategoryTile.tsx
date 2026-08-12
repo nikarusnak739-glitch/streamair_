@@ -14,11 +14,11 @@ export default function CategoryTile({
   return (
     <Link
       href={href}
-      className="tile-dark rounded-2xl p-6 flex flex-col items-start gap-2 shadow-sm hover:-translate-y-1 transition-transform"
+      className="tile-light rounded-2xl p-6 flex flex-col items-start gap-2 shadow-sm hover:-translate-y-1 transition-transform"
     >
       <span className="text-3xl">{emoji}</span>
       <span className="font-heading font-bold text-lg">{title}</span>
-      <span className="text-sm text-white/60">{subtitle}</span>
+      <span className="text-sm opacity-60">{subtitle}</span>
     </Link>
   );
 }
