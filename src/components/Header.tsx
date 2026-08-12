@@ -21,11 +21,11 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
-            src="/images/misc/logo.png"
+            src="/images/misc/logo-dark.png"
             alt="StreamAIR Aerography"
-            width={160}
-            height={44}
-            className="h-9 w-auto object-contain"
+            width={220}
+            height={97}
+            className="h-12 sm:h-14 w-auto object-contain"
             priority
           />
         </Link>

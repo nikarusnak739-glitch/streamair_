@@ -12,8 +12,18 @@ export default function Home() {
     <div>
       <WeekendBanner />
       <section className="hero-dark relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-10 md:gap-6">
-          <div className="hero-text-in flex flex-col items-start gap-6 text-left order-2 md:order-1">
+        <div className="hero-photo-in md:hidden relative w-full aspect-[615/900]">
+          <Image
+            src="/images/misc/hero-premium.jpg"
+            alt="StreamAIR — фарба для аерографії"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-10 md:py-24 grid md:grid-cols-2 items-center gap-10 md:gap-6">
+          <div className="hero-text-in flex flex-col items-start gap-6 text-left">
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold max-w-xl text-white">
               Фарби та трафарети для аерографії
             </h1>
@@ -36,15 +46,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hero-photo-in order-1 md:order-2 justify-self-center md:justify-self-end">
-            <div className="hero-photo-glow relative w-72 sm:w-96 md:w-[420px] aspect-[615/900] rounded-2xl overflow-hidden">
+          <div className="hero-photo-in hidden md:flex justify-self-end">
+            <div className="hero-photo-glow relative w-96 lg:w-[420px] aspect-[615/900] rounded-2xl overflow-hidden">
               <Image
                 src="/images/misc/hero-premium.jpg"
                 alt="StreamAIR — фарба для аерографії"
                 fill
-                sizes="(max-width: 768px) 75vw, 420px"
+                sizes="420px"
                 className="object-cover"
-                priority
               />
             </div>
           </div>

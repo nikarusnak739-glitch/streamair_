@@ -134,10 +134,9 @@ body {
   }
 }
 
-/* Темні секції: сторінки категорій (Фарби / Трафарети / Матеріали) і плитки категорій — того ж кольору, що й hero */
-.section-dark,
+/* Плитки категорій на головній — графітовий фон */
 .tile-dark {
-  background: radial-gradient(circle at 75% 25%, #2b1b2e 0%, #17111c 55%, #0d0a11 100%);
+  background: var(--graphite);
   color: #fff;
 }
 

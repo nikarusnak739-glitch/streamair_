@@ -12,17 +12,15 @@ export default function MaterialyPage() {
   const items = getAdditionalMaterials();
 
   return (
-    <div className="section-dark">
-      <div className="mx-auto max-w-6xl px-4 py-10">
-        <h1 className="font-heading text-3xl font-bold mb-2">Додаткові матеріали</h1>
-        <p className="text-white/60 mb-8">
-          Сітка для дизайну, блокнот для трафаретів, засіб для очищення аерографа та топове покриття
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {items.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+    <div className="mx-auto max-w-6xl px-4 py-10">
+      <h1 className="font-heading text-3xl font-bold mb-2">Додаткові матеріали</h1>
+      <p className="opacity-70 mb-8">
+        Сітка для дизайну, блокнот для трафаретів, засіб для очищення аерографа та топове покриття
+      </p>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {items.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
     </div>
   );

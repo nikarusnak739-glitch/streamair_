@@ -24,12 +24,15 @@ export default function ProductCard({ product, className = "" }: { product: Prod
         />
       </Link>
       <div className="p-3 flex flex-col gap-1 flex-1">
-        <Link href={`/product/${product.id}`} className="font-semibold leading-tight hover:text-accent-pink transition-colors">
+        <Link
+          href={`/product/${product.id}`}
+          className="font-semibold leading-tight text-[var(--graphite)] hover:text-accent-pink transition-colors"
+        >
           {getProductName(product)}
         </Link>
-        {subtitle && <p className="text-xs opacity-60">{subtitle}</p>}
+        {subtitle && <p className="text-xs text-[var(--graphite)] opacity-60">{subtitle}</p>}
         <div className="mt-auto flex items-center justify-between pt-2">
-          <span className="font-bold">{formatPrice(product.price)}</span>
+          <span className="font-bold text-[var(--graphite)]">{formatPrice(product.price)}</span>
           <button
             onClick={(e) => {
               e.preventDefault();
