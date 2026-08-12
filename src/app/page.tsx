@@ -47,12 +47,12 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-photo-in hidden md:flex justify-self-end">
-            <div className="hero-photo-glow relative w-96 lg:w-[420px] aspect-[615/900] rounded-2xl overflow-hidden">
+            <div className="hero-photo-glow relative w-[420px] lg:w-[520px] aspect-[615/900] rounded-2xl overflow-hidden">
               <Image
                 src="/images/misc/hero-premium.jpg"
                 alt="StreamAIR — фарба для аерографії"
                 fill
-                sizes="420px"
+                sizes="520px"
                 className="object-cover"
               />
             </div>
