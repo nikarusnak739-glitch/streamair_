@@ -94,6 +94,40 @@ body {
   backdrop-filter: blur(6px);
 }
 
+/* Преміальний темний hero */
+.hero-dark {
+  background: radial-gradient(circle at 75% 25%, #2b1b2e 0%, #17111c 55%, #0d0a11 100%);
+}
+
+.hero-photo-glow {
+  box-shadow: 0 0 70px 22px rgba(255, 255, 255, 0.12), 0 30px 60px -18px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateX(36px) scale(0.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.hero-text-in {
+  animation: heroFadeUp 0.8s ease both;
+}
+
+.hero-photo-in {
+  animation: heroFadeIn 0.9s ease 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text-in,
+  .hero-photo-in {
+    animation: none;
+  }
+}
+
 /* Банер "Шалені вихідні" */
 .weekend-banner-surface {
   position: relative;

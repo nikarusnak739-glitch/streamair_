@@ -11,7 +11,9 @@ export default function ProductCard({ product, className = "" }: { product: Prod
   const subtitle = getProductSubtitle(product);
 
   return (
-    <div className={`card-surface rounded-2xl overflow-hidden shadow-sm flex flex-col ${className}`}>
+    <div
+      className={`card-surface rounded-2xl overflow-hidden shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-[transform,box-shadow] duration-200 ${className}`}
+    >
       <Link href={`/product/${product.id}`} className="block aspect-square relative bg-white">
         <Image
           src={product.image}

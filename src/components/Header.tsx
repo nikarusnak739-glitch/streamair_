@@ -43,8 +43,20 @@ export default function Header() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline text-sm font-medium hover:text-accent-pink transition-colors"
+            aria-label={`Instagram ${INSTAGRAM_HANDLE}`}
+            className="hidden sm:flex items-center gap-2 text-sm font-medium hover:text-accent-pink transition-colors group"
           >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              className="w-5 h-5 transition-transform duration-200 group-hover:scale-110 group-hover:-translate-y-0.5"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+            </svg>
             {INSTAGRAM_HANDLE}
           </a>
           <Link

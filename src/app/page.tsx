@@ -11,35 +11,43 @@ export default function Home() {
   return (
     <div>
       <WeekendBanner />
-      <section className="mx-auto max-w-6xl px-4 pt-14 pb-10 flex flex-col items-center text-center gap-6">
-        <Image
-          src="/images/misc/logo.png"
-          alt="StreamAIR Aerography"
-          width={360}
-          height={98}
-          className="w-64 sm:w-80 h-auto"
-          priority
-        />
-        <h1 className="text-3xl sm:text-4xl font-extrabold max-w-2xl">
-          Фарби та трафарети для аерографії
-        </h1>
-        <p className="max-w-xl opacity-70">
-          Фірмова продукція streamair_: фарби, трафарети, рідина для промивки аерографа, сітки для дизайну,
-          топ для перекриття аерографії.
-        </p>
-        <div className="flex gap-3 flex-wrap justify-center">
-          <Link
-            href="/farby"
-            className="rounded-full bg-[var(--foreground)] text-white px-6 py-3 font-medium hover:opacity-90 transition-opacity"
-          >
-            Обрати фарби
-          </Link>
-          <Link
-            href="/trafarety"
-            className="rounded-full card-surface px-6 py-3 font-medium hover:-translate-y-0.5 transition-transform"
-          >
-            Каталог трафаретів
-          </Link>
+      <section className="hero-dark relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-10 md:gap-6">
+          <div className="hero-text-in flex flex-col items-start gap-6 text-left order-2 md:order-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold max-w-xl text-white">
+              Фарби та трафарети для аерографії
+            </h1>
+            <p className="max-w-xl text-white/70">
+              Фірмова продукція streamair_: фарби, трафарети, рідина для промивки аерографа, сітки для
+              дизайну, топ для перекриття аерографії.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <Link
+                href="/farby"
+                className="rounded-full bg-white text-[var(--foreground)] px-6 py-3 font-medium hover:opacity-90 hover:-translate-y-0.5 transition"
+              >
+                Обрати фарби
+              </Link>
+              <Link
+                href="/trafarety"
+                className="rounded-full border border-white/30 text-white px-6 py-3 font-medium hover:bg-white/10 hover:-translate-y-0.5 transition"
+              >
+                Каталог трафаретів
+              </Link>
+            </div>
+          </div>
+          <div className="hero-photo-in order-1 md:order-2 justify-self-center md:justify-self-end">
+            <div className="hero-photo-glow relative w-56 sm:w-72 md:w-80 aspect-[615/900] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/misc/hero-premium.jpg"
+                alt="StreamAIR — фарба для аерографії"
+                fill
+                sizes="(max-width: 768px) 60vw, 320px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
