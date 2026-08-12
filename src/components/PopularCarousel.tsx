@@ -8,7 +8,7 @@ export default function PopularCarousel({ products }: { products: Product[] }) {
   const loopItems = [...products, ...products];
 
   return (
-    <section className="bg-[var(--graphite)] py-10">
+    <section className="hero-dark py-10">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="font-heading text-2xl font-bold mb-5 text-white">Популярне</h2>
         <div className="marquee-viewport">
