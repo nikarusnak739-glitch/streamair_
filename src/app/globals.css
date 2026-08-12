@@ -134,9 +134,10 @@ body {
   }
 }
 
-/* Плитки категорій на головній — графітовий фон */
-.tile-dark {
-  background: var(--graphite);
+/* Плитки категорій і темні сторінки — того ж кольору, що й hero */
+.tile-dark,
+.section-dark {
+  background: radial-gradient(circle at 75% 25%, #2b1b2e 0%, #17111c 55%, #0d0a11 100%);
   color: #fff;
 }
 
