@@ -23,7 +23,7 @@ const playfair = Playfair_Display({
   weight: ["600", "700", "800"],
 });
 
-const SITE_URL = "https://streamair.shop";
+const SITE_URL = "https://streamair.kyiv.ua";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

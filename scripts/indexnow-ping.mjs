@@ -1,6 +1,6 @@
 // Сповіщає Bing/Яндекс (IndexNow) про всі URL сайту без потреби в акаунті.
 // Запуск: node scripts/indexnow-ping.mjs
-const SITE_URL = "https://streamair.shop";
+const SITE_URL = "https://streamair.kyiv.ua";
 const KEY = "26924e7e11d24dccb1e4dbec0f1b5f9f";
 
 const sitemapRes = await fetch(`${SITE_URL}/sitemap.xml`);
