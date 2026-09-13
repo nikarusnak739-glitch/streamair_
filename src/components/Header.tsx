@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/constants";
@@ -18,13 +19,15 @@ export default function Header() {
   return (
     <header className="hero-dark sticky top-0 z-40 shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex flex-col shrink-0 leading-none">
-          <span className="font-heading text-2xl sm:text-3xl tracking-wide text-white">
-            Stream<span className="font-normal text-white/80">AIR</span>
-          </span>
-          <span className="text-[10px] sm:text-xs tracking-[0.35em] text-white/50 mt-0.5">
-            AEROGRAPHY
-          </span>
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Image
+            src="/images/misc/logo-dark.png"
+            alt="StreamAIR Aerography"
+            width={220}
+            height={97}
+            className="h-12 sm:h-14 w-auto object-contain"
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/80">
